@@ -19,10 +19,6 @@ logger = sly.logger
 @sly.timeit
 def download_activity_csv(api: sly.Api, task_id, context, state, app_logger):
 
-    logger.warn('PROJECT_ID {}'.format(PROJECT_ID))
-    logger.warn('LABEL_JOB_ID {}'.format(LABEL_JOB_ID))
-    logger.warn('MEMBER_ID {}'.format(MEMBER_ID))
-    logger.warn('TEAM_ID {}'.format(TEAM_ID))
     if PROJECT_ID:
         result_act = api.project.get_activity(int(PROJECT_ID))
         file_remote = "/activity_data/{}_{}_{}".format(TASK_ID, PROJECT_ID, RESULT_FILE_NAME)
