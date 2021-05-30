@@ -7,9 +7,9 @@ my_app = sly.AppService()
 
 TEAM_ID = int(os.environ['context.teamId'])
 WORKSPACE_ID = int(os.environ['context.workspaceId'])
-PROJECT_ID = int(os.environ['modal.state.slyProjectId'])
-LABEL_JOB_ID = int(os.environ['modal.state.slyLabelJobId'])
-MEMBER_ID = int(os.environ['modal.state.slyMemberId'])
+PROJECT_ID = os.environ.get("modal.state.slyProjectId")
+LABEL_JOB_ID = os.environ.get("modal.state.slyLabelJobId")
+MEMBER_ID = os.environ.get("modal.state.slyMemberId")
 TASK_ID = int(os.environ["TASK_ID"])
 RESULT_FILE_NAME = 'activity.csv'
 logger = sly.logger
@@ -19,16 +19,20 @@ logger = sly.logger
 @sly.timeit
 def download_activity_csv(api: sly.Api, task_id, context, state, app_logger):
 
+    logger.warn('PROJECT_ID {}'.format(PROJECT_ID))
+    logger.warn('LABEL_JOB_ID {}'.format(LABEL_JOB_ID))
+    logger.warn('MEMBER_ID {}'.format(MEMBER_ID))
+    logger.warn('TEAM_ID {}'.format(TEAM_ID))
     if PROJECT_ID:
-        result_act = api.project.get_activity(PROJECT_ID)
+        result_act = api.project.get_activity(int(PROJECT_ID))
         file_remote = "/activity_data/{}_{}_{}".format(TASK_ID, PROJECT_ID, RESULT_FILE_NAME)
     elif LABEL_JOB_ID:
-        result_act = api.labeling_job.get_activity(LABEL_JOB_ID)
+        result_act = api.labeling_job.get_activity(int(LABEL_JOB_ID))
         file_remote = "/activity_data/{}_{}_{}".format(TASK_ID, LABEL_JOB_ID, RESULT_FILE_NAME)
     elif MEMBER_ID:
-        result_act = api.user.get_member_activity(TEAM_ID, MEMBER_ID)
+        result_act = api.user.get_member_activity(TEAM_ID, int(MEMBER_ID))
         file_remote = "/activity_data/{}_{}_{}".format(TASK_ID, MEMBER_ID, RESULT_FILE_NAME)
-    elif TEAM_ID :
+    elif TEAM_ID:
         result_act_list = api.team.get_activity(TEAM_ID)
         columns = result_act_list[0].keys()
         result_act = pd.DataFrame(result_act_list, columns=columns)

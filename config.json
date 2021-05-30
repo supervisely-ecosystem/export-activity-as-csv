@@ -11,7 +11,7 @@
   "icon": "https://i.imgur.com/hnLD4nM.png",
   "icon_background": "#FFFFFF",
   "context_menu": {
-    "target": ["images_project", "videos_project", "point_cloud_project", "team_member"],
+    "target": ["images_project", "videos_project", "point_cloud_project", "team_member", "team", "labeling_job"],
     "context_root": "Download as"
   }
 }
