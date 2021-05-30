@@ -2,7 +2,9 @@
   "name": "Download activity",
   "type": "app",
   "categories": [
-    "Import"
+    "report",
+    "labeling job",
+    "member"
   ],
   "description": "Download activity to csv file",
   "docker_image": "supervisely/base-py-sdk:6.1.73",
@@ -11,7 +13,7 @@
   "icon": "https://i.imgur.com/hnLD4nM.png",
   "icon_background": "#FFFFFF",
   "context_menu": {
-    "target": ["images_project", "videos_project", "point_cloud_project", "team_member"],
-    "context_root": "Download as"
+    "target": ["images_project", "videos_project", "point_cloud_project", "team_member", "team", "labeling_job"],
+    "context_root": "Report"
   }
 }
