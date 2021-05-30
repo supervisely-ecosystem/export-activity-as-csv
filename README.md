@@ -1,5 +1,6 @@
 <div align="center" markdown>
-<img src="https://i.imgur.com/sfh2ILA.png" width="1900px"/>
+<img src="https://i.imgur.com/zxgNNMs.png" width="1900px"/>
+
 
 # Download activity to CSV
 
@@ -29,14 +30,18 @@ Download activity data in project, team, labeling job or activity of team member
 
 **Step 2**: Open context menu of project(team, labeling job, team member) -> `Report` -> `Download activity`. 
 
-<img src="https://i.imgur.com/3ItAVU7.png"/>
+<img src="https://i.imgur.com/F2NPWjr.png"/>
 
 ## How to use
 
-Resulting project will be placed to your current `Workspace` with the same name as the cityscapes archive. Images in datasets will have tags (`train`, `val`, or `test`) corresponding to the parent directories in which the datasets were located during import. If the `train` directories are in the input folders, but the `val` directories are not, then the images in `train` folder will be tagged with `train` and `val` tags in the ratio, exposed in the slider.
+After running the application, you will be redirected to the `Tasks` page. Once application processing has finished, your link for downloading will be available. Click on the `file name` to download it.
 
-<img src="https://i.imgur.com/TMjl7Pt.png"/>
+<img src="https://i.imgur.com/ang6yiZ.png"/>
 
-You can also access your project by clicking on it's name from `Tasks` page.
 
-<img src="https://i.imgur.com/i0pfXRV.png">
+
+**Note:** You can also find your converted project in `Team Files`->`activity_data`->`<taskId>_<instanceId>_<projectName>.csv`.
+
+Where `instanceId` may be `projectId`, `teamId`, `labeling_jobId` or `team_memberID`.
+
+<img src="https://i.imgur.com/8eW0SLM.png">
