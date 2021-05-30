@@ -30,7 +30,7 @@ Download activity data in project, team, labeling job or activity of team member
 
 **Step 2**: Open context menu of project(team, labeling job, team member) -> `Report` -> `Download activity`. 
 
-<img src="https://i.imgur.com/F2NPWjr.png"/>
+<img src="https://i.imgur.com/vmxlakQ.png"/>
 
 ## How to use
 
