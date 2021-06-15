@@ -38,7 +38,7 @@ def download_activity_csv(api: sly.Api, task_id, context, state, app_logger):
         if len(result_act) == 0:
             app_logger.warn("No activities for current Member has been found")
         file_remote = f"/activity_data/{TASK_ID}_{MEMBER_ID}_{RESULT_FILE_NAME}"
-    if TEAM_ID:
+    elif TEAM_ID:
         result_act = api.team.get_activity(TEAM_ID, progress_cb=print_progress)
         if len(result_act) == 0:
             app_logger.warn("No activities for current Team has been found")
