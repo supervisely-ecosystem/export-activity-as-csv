@@ -83,4 +83,3 @@ def main():
 
 if __name__ == '__main__':
     sly.main_wrapper("main", main)
-
