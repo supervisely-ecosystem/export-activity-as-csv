@@ -17,11 +17,11 @@ logger = sly.logger
 @my_app.callback("download_activity_csv")
 @sly.timeit
 def download_activity_csv(api: sly.Api, task_id, context, state, app_logger):
-    progress = sly.Progress("Write csv rows to file", 0, report=False)
+    progress = sly.Progress("Write csv rows to file", 0)
 
     def print_progress(received, total):
-        progress.set_total(total)
-        progress.iters_done_report(received)
+        progress.set(received, total)
+
 
     if PROJECT_ID:
         result_act = api.project.get_activity(int(PROJECT_ID), progress_cb=print_progress)
@@ -29,7 +29,7 @@ def download_activity_csv(api: sly.Api, task_id, context, state, app_logger):
             app_logger.warn("No activities for current Project has been found")
         file_remote = f"/activity_data/{TASK_ID}_{PROJECT_ID}_{RESULT_FILE_NAME}"
     elif LABEL_JOB_ID:
-        result_act = api.labeling_job.get_activity(int(LABEL_JOB_ID), progress_cb=print_progress)
+        result_act = api.labeling_job.get_activity(TEAM_ID, int(LABEL_JOB_ID), progress_cb=print_progress) #job_id
         if len(result_act) == 0:
             app_logger.warn("No activities for current Labeling Job has been found")
         file_remote = f"/activity_data/{TASK_ID}_{LABEL_JOB_ID}_{RESULT_FILE_NAME}"
