@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/zxgNNMs.png" width="1900px"/>
 
 
-# Download activity to CSV
+# Export activity as CSV
 
 <p align="center">
   <a href="#Overview">Overview</a> •
@@ -22,13 +22,13 @@
 
 ## Overview
 
-Download activity data in project, team, labeling job or activity of team member and save it to `CSV` file.
+Download activity data from project, team, labeling job, workspace or team member as `.csv` file.
 
 ## How To Run 
 
 **Step 1**: Add app to your team from [Ecosystem](https://ecosystem.supervise.ly/apps/import-cityscapes) if it is not there.
 
-**Step 2**: Open context menu of project(team, labeling job, team member) -> `Report` -> `Download activity`. 
+**Step 2**: Open context menu of team, workspace, project, labeling job, or team member -> `Report` -> `Download activity`. 
 
 <img src="https://i.imgur.com/vmxlakQ.png"/>
 
@@ -40,8 +40,8 @@ After running the application, you will be redirected to the `Tasks` page. Once 
 
 
 
-**Note:** You can also find your converted project in `Team Files`->`activity_data`->`<taskId>_<instanceId>_<projectName>.csv`.
+**Note:** You can also find your activity data in `Team Files`->`activity_data`->`<taskId>_<instanceId>_<sampleName>.csv`.
 
-Where `instanceId` may be `projectId`, `teamId`, `labeling_jobId` or `team_memberID`.
+Where `instanceId` and `sampleName` can be `projectId`, `teamId`, `labeling_jobId` or `team_memberID`.
 
 <img src="https://i.imgur.com/8eW0SLM.png">
