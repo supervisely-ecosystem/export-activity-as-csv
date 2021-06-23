@@ -1,5 +1,5 @@
 <div align="center" markdown>
-<img src="https://i.imgur.com/zxgNNMs.png" width="1900px"/>
+<img src="https://i.imgur.com/1C2S0T5.png" width="1900px"/>
 
 
 # Export activity as CSV
@@ -13,10 +13,10 @@
 
 
 [![](https://img.shields.io/badge/slack-chat-green.svg?logo=slack)](https://supervise.ly/slack)
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/supervisely-ecosystem/download-activity-csv)
-[![views](https://app.supervise.ly/public/api/v3/ecosystem.counters?repo=supervisely-ecosystem/download-activity-csv&counter=views&label=views)](https://supervise.ly)
-[![used by teams](https://app.supervise.ly/public/api/v3/ecosystem.counters?repo=supervisely-ecosystem/download-activity-csv&counter=downloads&label=used%20by%20teams)](https://supervise.ly)
-[![runs](https://app.supervise.ly/public/api/v3/ecosystem.counters?repo=supervisely-ecosystem/download-activity-csv&counter=runs&label=runs&123)](https://supervise.ly)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/supervisely-ecosystem/export-activity-as-csv)
+[![views](https://app.supervise.ly/public/api/v3/ecosystem.counters?repo=supervisely-ecosystem/export-activity-as-csv&counter=views&label=views)](https://supervise.ly)
+[![used by teams](https://app.supervise.ly/public/api/v3/ecosystem.counters?repo=supervisely-ecosystem/export-activity-as-csv&counter=downloads&label=used%20by%20teams)](https://supervise.ly)
+[![runs](https://app.supervise.ly/public/api/v3/ecosystem.counters?repo=supervisely-ecosystem/export-activity-as-csv&counter=runs&label=runs&123)](https://supervise.ly)
 
 </div>
 
@@ -26,22 +26,20 @@ Download activity data from project, team, labeling job, workspace or team membe
 
 ## How To Run 
 
-**Step 1**: Add app to your team from [Ecosystem](https://ecosystem.supervise.ly/apps/import-cityscapes) if it is not there.
+**Step 1**: Add app to your team from [Ecosystem](https://ecosystem.supervise.ly/apps/export-activity-as-csv) if it is not there.
 
-**Step 2**: Open context menu of team, workspace, project, labeling job, or team member -> `Report` -> `Download activity`. 
+**Step 2**: Open context menu of team, project, labeling job, or team member -> `Report` -> `Export activity as csv`. 
 
-<img src="https://i.imgur.com/vmxlakQ.png"/>
+<img src="https://i.imgur.com/BFLUfuW.png" width="600px"/>
 
 ## How to use
 
 After running the application, you will be redirected to the `Tasks` page. Once application processing has finished, your link for downloading will be available. Click on the `file name` to download it.
 
-<img src="https://i.imgur.com/ang6yiZ.png"/>
+<img src="https://i.imgur.com/eHeSzGw.png"/>
 
+**Note:** You can also find your activity data in `Team Files`->`activity_data`->`<taskId>_<instanceId>_activity.csv`.
 
+Where `instanceId` can be `projectId`, `teamId`, `labeling_jobId` or `team_memberID`.
 
-**Note:** You can also find your activity data in `Team Files`->`activity_data`->`<taskId>_<instanceId>_<sampleName>.csv`.
-
-Where `instanceId` and `sampleName` can be `projectId`, `teamId`, `labeling_jobId` or `team_memberID`.
-
-<img src="https://i.imgur.com/8eW0SLM.png">
+<img src="https://i.imgur.com/5IJZhQ1.png">
