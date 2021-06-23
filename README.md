@@ -30,13 +30,13 @@ Download activity data from project, team, labeling job, workspace or team membe
 
 **Step 2**: Open context menu of team, project, labeling job, or team member -> `Report` -> `Export activity as csv`. 
 
-<img src="https://i.imgur.com/eHeSzGw.png"/>
+<img src="https://i.imgur.com/hWXs3YQ.png" width="400px"/>
 
 ## How to use
 
 After running the application, you will be redirected to the `Tasks` page. Once application processing has finished, your link for downloading will be available. Click on the `file name` to download it.
 
-<img src="https://i.imgur.com/ang6yiZ.png"/>
+<img src="https://i.imgur.com/eHeSzGw.png"/>
 
 **Note:** You can also find your activity data in `Team Files`->`activity_data`->`<taskId>_<instanceId>_activity.csv`.
 
