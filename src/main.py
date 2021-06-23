@@ -22,7 +22,6 @@ def download_activity_csv(api: sly.Api, task_id, context, state, app_logger):
     def print_progress(received, total):
         progress.set(received, total)
 
-
     if PROJECT_ID:
         result_act = api.project.get_activity(int(PROJECT_ID), progress_cb=print_progress)
         if len(result_act) == 0:
@@ -69,14 +68,12 @@ def download_activity_csv(api: sly.Api, task_id, context, state, app_logger):
                                 description="CSV with reference items")
 
     app_logger.info("Local file successfully uploaded to team files")
-
     my_app.stop()
 
 
 def main():
     sly.logger.info("Script arguments", extra={
-        "TEAM_ID": TEAM_ID,
-        #"WORKSPACE_ID": WORKSPACE_ID
+        "TEAM_ID": TEAM_ID
     })
     my_app.run(initial_events=[{"command": "download_activity_csv"}])
 
