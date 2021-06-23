@@ -13,7 +13,7 @@
   "icon": "https://i.imgur.com/hnLD4nM.png",
   "icon_background": "#FFFFFF",
   "context_menu": {
-    "target": ["team", "workspace", "images_project", "videos_project", "point_cloud_project", "team_member", "labeling_job"],
+    "target": ["team", "images_project", "videos_project", "point_cloud_project", "team_member", "labeling_job"],
     "context_root": "Report"
   }
 }

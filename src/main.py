@@ -22,22 +22,22 @@ def download_activity_csv(api: sly.Api, task_id, context, state, app_logger):
     def print_progress(received, total):
         progress.set(received, total)
 
-    if PROJECT_ID:
-        result_act = api.project.get_activity(int(PROJECT_ID), progress_cb=print_progress)
+    if PROJECT_ID is not None:
+        result_act = api.project.get_activity(PROJECT_ID, progress_cb=print_progress)
         if len(result_act) == 0:
             app_logger.warn("No activities for current Project has been found")
         file_remote = f"/activity_data/{TASK_ID}_{PROJECT_ID}_{RESULT_FILE_NAME}"
-    elif LABEL_JOB_ID:
-        result_act = api.labeling_job.get_activity(TEAM_ID, int(LABEL_JOB_ID), progress_cb=print_progress) #job_id
+    elif LABEL_JOB_ID is not None:
+        result_act = api.labeling_job.get_activity(TEAM_ID, LABEL_JOB_ID, progress_cb=print_progress) #job_id
         if len(result_act) == 0:
             app_logger.warn("No activities for current Labeling Job has been found")
         file_remote = f"/activity_data/{TASK_ID}_{LABEL_JOB_ID}_{RESULT_FILE_NAME}"
-    elif MEMBER_ID:
-        result_act = api.user.get_member_activity(TEAM_ID, int(MEMBER_ID), progress_cb=print_progress)
+    elif MEMBER_ID is not None:
+        result_act = api.user.get_member_activity(TEAM_ID, MEMBER_ID, progress_cb=print_progress)
         if len(result_act) == 0:
             app_logger.warn("No activities for current Member has been found")
         file_remote = f"/activity_data/{TASK_ID}_{MEMBER_ID}_{RESULT_FILE_NAME}"
-    elif TEAM_ID:
+    elif TEAM_ID is not None:
         result_act = api.team.get_activity(TEAM_ID, progress_cb=print_progress)
         if len(result_act) == 0:
             app_logger.warn("No activities for current Team has been found")
@@ -64,8 +64,7 @@ def download_activity_csv(api: sly.Api, task_id, context, state, app_logger):
         upload_progress[0].set_current_value(monitor.bytes_read)
 
     file_info = api.file.upload(TEAM_ID, file_local, file_remote, progress_cb=lambda m: _print_progress(m, upload_progress))
-    api.task._set_custom_output(task_id, file_info.id, sly.fs.get_file_name_with_ext(file_remote),
-                                description="CSV with reference items")
+    api.task.set_output_archive(task_id, file_info.id, sly.fs.get_file_name_with_ext(file_remote))
 
     app_logger.info("Local file successfully uploaded to team files")
     my_app.stop()
