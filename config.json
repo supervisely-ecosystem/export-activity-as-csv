@@ -1,16 +1,16 @@
 {
-  "name": "Download activity",
+  "name": "Export activity as csv",
   "type": "app",
   "categories": [
     "report",
     "labeling job",
     "member"
   ],
-  "description": "Download activity to csv file",
+  "description": "Download activity as csv file",
   "docker_image": "supervisely/base-py-sdk:6.1.84",
   "main_script": "src/main.py",
   "task_location": "workspace_tasks",
-  "icon": "https://i.imgur.com/hnLD4nM.png",
+  "icon": "https://i.imgur.com/pJEJ5zP.png",
   "icon_background": "#FFFFFF",
   "context_menu": {
     "target": ["team", "images_project", "videos_project", "point_cloud_project", "team_member", "labeling_job"],
