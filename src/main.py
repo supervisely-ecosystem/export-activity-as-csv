@@ -4,8 +4,8 @@ import pandas as pd
 
 my_app = sly.AppService()
 
-TEAM_ID = int(os.environ['context.teamId'])
-WORKSPACE_ID = int(os.environ['context.workspaceId'])
+TEAM_ID = os.environ['context.teamId']
+WORKSPACE_ID = os.environ['context.workspaceId']
 PROJECT_ID = os.environ.get("modal.state.slyProjectId")
 LABEL_JOB_ID = os.environ.get("modal.state.slyLabelJobId")
 MEMBER_ID = os.environ.get("modal.state.slyMemberId")
@@ -28,7 +28,7 @@ def download_activity_csv(api: sly.Api, task_id, context, state, app_logger):
             app_logger.warn("No activities for current Project has been found")
         file_remote = f"/activity_data/{TASK_ID}_{PROJECT_ID}_{RESULT_FILE_NAME}"
     elif LABEL_JOB_ID is not None:
-        result_act = api.labeling_job.get_activity(TEAM_ID, LABEL_JOB_ID, progress_cb=print_progress) #job_id
+        result_act = api.labeling_job.get_activity(TEAM_ID, LABEL_JOB_ID, progress_cb=print_progress)
         if len(result_act) == 0:
             app_logger.warn("No activities for current Labeling Job has been found")
         file_remote = f"/activity_data/{TASK_ID}_{LABEL_JOB_ID}_{RESULT_FILE_NAME}"
