@@ -30,7 +30,7 @@ Download activity data from project, team, labeling job, workspace or team membe
 
 **Step 2**: Open context menu of team, project, labeling job, or team member -> `Report` -> `Export activity as csv`. 
 
-<img src="https://i.imgur.com/hWXs3YQ.png" width="400px"/>
+<img src="https://i.imgur.com/BFLUfuW.png" width="600px"/>
 
 ## How to use
 
