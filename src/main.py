@@ -7,7 +7,7 @@ my_app = sly.AppService()
 TEAM_ID = os.environ['context.teamId']
 WORKSPACE_ID = os.environ['context.workspaceId']
 PROJECT_ID = os.environ.get("modal.state.slyProjectId")
-LABEL_JOB_ID = os.environ.get("modal.state.slyLabelJobId")
+JOB_ID = os.environ.get("modal.state.slyJobId")
 MEMBER_ID = os.environ.get("modal.state.slyMemberId")
 TASK_ID = int(os.environ["TASK_ID"])
 RESULT_FILE_NAME = 'activity.csv'
@@ -27,11 +27,11 @@ def download_activity_csv(api: sly.Api, task_id, context, state, app_logger):
         if len(result_act) == 0:
             app_logger.warn("No activities for current Project has been found")
         file_remote = f"/activity_data/{TASK_ID}_{PROJECT_ID}_{RESULT_FILE_NAME}"
-    elif LABEL_JOB_ID is not None:
-        result_act = api.labeling_job.get_activity(TEAM_ID, LABEL_JOB_ID, progress_cb=print_progress)
+    elif JOB_ID is not None:
+        result_act = api.labeling_job.get_activity(TEAM_ID, JOB_ID, progress_cb=print_progress)
         if len(result_act) == 0:
             app_logger.warn("No activities for current Labeling Job has been found")
-        file_remote = f"/activity_data/{TASK_ID}_{LABEL_JOB_ID}_{RESULT_FILE_NAME}"
+        file_remote = f"/activity_data/{TASK_ID}_{JOB_ID}_{RESULT_FILE_NAME}"
     elif MEMBER_ID is not None:
         result_act = api.user.get_member_activity(TEAM_ID, MEMBER_ID, progress_cb=print_progress)
         if len(result_act) == 0:
