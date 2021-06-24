@@ -30,7 +30,21 @@ Download activity data from project, team, labeling job or team member as `.csv`
 
 **Step 2**: Open context menu of team, project, labeling job, or team member -> `Report` -> `Export activity as csv`. 
 
-<img src="https://i.imgur.com/BFLUfuW.png" width="600px"/>
+**For Project**:
+
+<img src="https://i.imgur.com/BFLUfuW.png" width="700px"/>
+
+**For Team**:
+
+<img src="https://i.imgur.com/sG2pqlQ.png" width="900px"/>
+
+**For Member**:
+
+<img src="https://i.imgur.com/I1sjlnF.png" width="900px"/>
+
+**For Labeling Job**:
+
+<img src="https://i.imgur.com/flfpyFU.png" width="900px"/>
 
 ## How to use
 
