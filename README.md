@@ -1,5 +1,5 @@
 <div align="center" markdown>
-<img src="https://i.imgur.com/1C2S0T5.png" width="1900px"/>
+<img src="https://i.imgur.com/1C2S0T5.png"/>
 
 
 # Export activity as CSV
