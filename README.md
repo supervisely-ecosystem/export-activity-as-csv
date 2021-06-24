@@ -11,7 +11,7 @@
   <a href="#How-To-Use">How To Use</a>
 </p>
 
-
+[![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](https://ecosystem.supervise.ly/apps/export-activity-as-csv)
 [![](https://img.shields.io/badge/slack-chat-green.svg?logo=slack)](https://supervise.ly/slack)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/supervisely-ecosystem/export-activity-as-csv)
 [![views](https://app.supervise.ly/public/api/v3/ecosystem.counters?repo=supervisely-ecosystem/export-activity-as-csv&counter=views&label=views)](https://supervise.ly)
