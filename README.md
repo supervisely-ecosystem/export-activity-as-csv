@@ -54,6 +54,6 @@ After running the application, you will be redirected to the `Tasks` page. Once 
 
 **Note:** You can also find your activity data in `Team Files`->`activity_data`->`<taskId>_<instanceId>_activity.csv`.
 
-Where `instanceId` can be `projectId`, `teamId`, `labeling_jobId` or `team_memberID`.
+Where `instanceId` can be `projectId`, `teamId`, `labelingJobId` or `teamMemberId`.
 
 <img src="https://i.imgur.com/5IJZhQ1.png">
