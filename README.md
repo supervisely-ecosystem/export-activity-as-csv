@@ -36,15 +36,15 @@ Download activity data from project, team, labeling job or team member as `.csv`
 
 **For Team**:
 
-<img src="https://i.imgur.com/sG2pqlQ.png" width="900px"/>
+<img src="https://i.imgur.com/x4yfwyY.png" width="900px"/>
 
 **For Member**:
 
-<img src="https://i.imgur.com/I1sjlnF.png" width="900px"/>
+<img src="https://i.imgur.com/azrE2qK.png" width="900px"/>
 
 **For Labeling Job**:
 
-<img src="https://i.imgur.com/flfpyFU.png" width="900px"/>
+<img src="https://i.imgur.com/ozWPCXE.png" width="900px"/>
 
 ## How to use
 
