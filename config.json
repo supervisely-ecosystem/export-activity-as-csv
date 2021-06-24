@@ -4,7 +4,8 @@
   "categories": [
     "report",
     "labeling job",
-    "member"
+    "member",
+    "export"
   ],
   "description": "Download activity as csv file",
   "docker_image": "supervisely/base-py-sdk:6.1.84",
