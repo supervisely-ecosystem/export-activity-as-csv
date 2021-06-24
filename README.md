@@ -22,7 +22,7 @@
 
 ## Overview
 
-Download activity data from project, team, labeling job, workspace or team member as `.csv` file.
+Download activity data from project, team, labeling job or team member as `.csv` file.
 
 ## How To Run 
 
