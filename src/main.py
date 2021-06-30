@@ -64,7 +64,7 @@ def download_activity_csv(api: sly.Api, task_id, context, state, app_logger):
         upload_progress[0].set_current_value(monitor.bytes_read)
 
     file_info = api.file.upload(TEAM_ID, file_local, file_remote, progress_cb=lambda m: _print_progress(m, upload_progress))
-    api.task._set_custom_output(task_id, file_info.id, sly.fs.get_file_name_with_ext(file_remote), file_info.full_storage_url)
+    api.task.set_output_archive(task_id, file_info.id, sly.fs.get_file_name_with_ext(file_remote))
 
     app_logger.info("Local file successfully uploaded to team files")
     my_app.stop()
