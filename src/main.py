@@ -1,8 +1,9 @@
 import os
-import supervisely_lib as sly
+import supervisely as sly
 import pandas as pd
+from supervisely.app.v1.app_service import AppService
 
-my_app = sly.AppService()
+my_app = AppService()
 
 TEAM_ID = os.environ['context.teamId']
 WORKSPACE_ID = os.environ['context.workspaceId']
@@ -55,6 +56,7 @@ def download_activity_csv(api: sly.Api, task_id, context, state, app_logger):
     result_act.to_csv(file_local, index=False, header=True)
 
     upload_progress = []
+
     def _print_progress(monitor, upload_progress):
         if len(upload_progress) == 0:
             upload_progress.append(sly.Progress(message=f"Upload '{RESULT_FILE_NAME}'",
@@ -63,8 +65,10 @@ def download_activity_csv(api: sly.Api, task_id, context, state, app_logger):
                                                 is_size=True))
         upload_progress[0].set_current_value(monitor.bytes_read)
 
-    file_info = api.file.upload(TEAM_ID, file_local, file_remote, progress_cb=lambda m: _print_progress(m, upload_progress))
-    api.task.set_output_archive(task_id, file_info.id, sly.fs.get_file_name_with_ext(file_remote))
+    file_info = api.file.upload(TEAM_ID, file_local, file_remote,
+                                progress_cb=lambda m: _print_progress(m, upload_progress))
+    api.task.set_output_archive(task_id=task_id, file_id=file_info.id,
+                                file_name=sly.fs.get_file_name_with_ext(file_remote), file_url=file_info.storage_path)
 
     app_logger.info("Local file successfully uploaded to team files")
     my_app.stop()
