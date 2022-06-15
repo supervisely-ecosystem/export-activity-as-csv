@@ -2,9 +2,8 @@
   "name": "Export activity as csv",
   "type": "app",
   "categories": [
-    "report",
-    "labeling job",
-    "member",
+    "images",
+    "collaboration",
     "export"
   ],
   "description": "Download activity as csv file",
