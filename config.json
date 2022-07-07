@@ -19,6 +19,7 @@
       "images_project",
       "videos_project",
       "point_cloud_project",
+      "point_cloud_episodes_project",
       "team_member",
       "labeling_job"
     ],
