@@ -1,5 +1,5 @@
 <div align="center" markdown>
-<img src="https://i.imgur.com/1C2S0T5.png"/>
+<img src="https://user-images.githubusercontent.com/48245050/182574734-33bff080-ba67-488a-bbcc-665d5dfadb9e.png"/>
 
 
 # Export activity as CSV
