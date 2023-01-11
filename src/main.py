@@ -27,23 +27,27 @@ def download_activity_csv(api: sly.Api, task_id, context, state, app_logger):
         result_act = api.project.get_activity(PROJECT_ID, progress_cb=print_progress)
         if len(result_act) == 0:
             app_logger.warn("No activities for current Project has been found")
-        file_remote = f"/activity_data/{TASK_ID}_{PROJECT_ID}_{RESULT_FILE_NAME}"
+        file_remote = os.path.join(
+        sly.team_files.RECOMMENDED_EXPORT_PATH, f"/activity_data/{TASK_ID}_{PROJECT_ID}_{RESULT_FILE_NAME}")
     elif JOB_ID is not None:
         result_act = api.labeling_job.get_activity(TEAM_ID, JOB_ID, progress_cb=print_progress)
         if len(result_act) == 0:
             app_logger.warn("No activities for current Labeling Job has been found")
-        file_remote = f"/activity_data/{TASK_ID}_{JOB_ID}_{RESULT_FILE_NAME}"
+        file_remote = os.path.join(
+        sly.team_files.RECOMMENDED_EXPORT_PATH, f"/activity_data/{TASK_ID}_{JOB_ID}_{RESULT_FILE_NAME}")
     elif MEMBER_ID is not None:
         result_act = api.user.get_member_activity(TEAM_ID, MEMBER_ID, progress_cb=print_progress)
         if len(result_act) == 0:
             app_logger.warn("No activities for current Member has been found")
-        file_remote = f"/activity_data/{TASK_ID}_{MEMBER_ID}_{RESULT_FILE_NAME}"
+        file_remote = os.path.join(
+        sly.team_files.RECOMMENDED_EXPORT_PATH, f"/activity_data/{TASK_ID}_{MEMBER_ID}_{RESULT_FILE_NAME}")
     elif TEAM_ID is not None:
         result_act = api.team.get_activity(TEAM_ID, progress_cb=print_progress)
         if len(result_act) == 0:
             app_logger.warn("No activities for current Team has been found")
         result_act = pd.DataFrame(result_act)
-        file_remote = f"/activity_data/{TASK_ID}_{TEAM_ID}_{RESULT_FILE_NAME}"
+        file_remote = os.path.join(
+        sly.team_files.RECOMMENDED_EXPORT_PATH, f"/activity_data/{TASK_ID}_{TEAM_ID}_{RESULT_FILE_NAME}")
 
     app_logger.info(f"Remote file path: '{file_remote}'")
     if api.file.exists(TEAM_ID, file_remote):
