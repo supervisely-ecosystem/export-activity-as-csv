@@ -31,28 +31,28 @@ Download activity data from project, team, labeling job or team member as `.csv`
 
 **For Project**:
 
-<img src="https://i.imgur.com/BFLUfuW.png" width="700px"/>
+<img src="media/htr2fp.png" width="700px"/>
 
 **For Team**:
 
-<img src="https://i.imgur.com/x4yfwyY.png" width="900px"/>
+<img src="media/htr2ft.png" width="900px"/>
 
 **For Member**:
 
-<img src="https://i.imgur.com/azrE2qK.png" width="900px"/>
+<img src="media/htr2fm.png" width="900px"/>
 
 **For Labeling Job**:
 
-<img src="https://i.imgur.com/ozWPCXE.png" width="900px"/>
+<img src="media/htr2flj.png" width="900px"/>
 
 ## How to use
 
 After running the application, you will be redirected to the `Tasks` page. Once application processing has finished, your link for downloading will be available. Click on the `file name` to download it.
 
-<img src="https://i.imgur.com/eHeSzGw.png"/>
+<img src="media/u1.png"/>
 
 **Note:** You can also find your activity data in `Team Files`->`activity_data`->`<taskId>_<instanceId>_activity.csv`.
 
 Where `instanceId` can be `projectId`, `teamId`, `labelingJobId` or `teamMemberId`.
 
-<img src="https://i.imgur.com/5IJZhQ1.png">
+<img src="media/u2.png">
