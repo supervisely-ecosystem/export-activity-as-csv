@@ -1,29 +1,26 @@
 {
-    "name": "Export activity as csv",
-    "type": "app",
-    "categories": [
-        "images",
-        "collaboration",
-        "export"
+  "name": "Export activity as csv",
+  "type": "app",
+  "categories": ["images", "collaboration", "export"],
+  "description": "Download activity as csv file",
+  "docker_image": "supervisely/collaboration:6.73.32",
+  "instance_version": "6.4.57",
+  "main_script": "src/main.py",
+  "task_location": "workspace_tasks",
+  "icon": "https://i.imgur.com/pJEJ5zP.png",
+  "icon_background": "#FFFFFF",
+  "headless": true,
+  "context_menu": {
+    "target": [
+      "team",
+      "images_project",
+      "videos_project",
+      "point_cloud_project",
+      "point_cloud_episodes_project",
+      "team_member",
+      "labeling_job"
     ],
-    "description": "Download activity as csv file",
-    "docker_image": "supervisely/collaboration:0.0.1",
-    "instance_version": "6.4.57",
-    "main_script": "src/main.py",
-    "task_location": "workspace_tasks",
-    "icon": "https://i.imgur.com/pJEJ5zP.png",
-    "icon_background": "#FFFFFF",
-    "context_menu": {
-        "target": [
-            "team",
-            "images_project",
-            "videos_project",
-            "point_cloud_project",
-            "point_cloud_episodes_project",
-            "team_member",
-            "labeling_job"
-        ],
-        "context_root": "Report"
-    },
-    "poster": "https://user-images.githubusercontent.com/48245050/182574734-33bff080-ba67-488a-bbcc-665d5dfadb9e.png"
+    "context_root": "Report"
+  },
+  "poster": "https://user-images.githubusercontent.com/48245050/182574734-33bff080-ba67-488a-bbcc-665d5dfadb9e.png"
 }

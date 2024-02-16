@@ -6,3 +6,4 @@ venv
 *.jpg
 *.jpeg
 supervisely_lib
+.venv
