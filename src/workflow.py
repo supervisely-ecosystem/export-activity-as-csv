@@ -16,7 +16,7 @@ def workflow_output(api: sly.Api, file: Union[int, sly.api.file_api.FileInfo]):
             file = api.file.get_info_by_id(file)
         relation_settings = sly.WorkflowSettings(
             url=f"/files/{file.id}/true/?teamId={file.team_id}",
-            url_title="Download CSV",
+            url_title="Download",
         )
         meta = sly.WorkflowMeta(relation_settings=relation_settings)
         api.app.workflow.add_output_file(file, meta=meta)
