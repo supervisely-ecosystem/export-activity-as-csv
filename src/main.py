@@ -5,6 +5,8 @@ import supervisely as sly
 from dotenv import load_dotenv
 from supervisely.app.v1.app_service import AppService
 
+import workflow as w
+
 if sly.is_development():
     load_dotenv("debug.env")
     load_dotenv(os.path.expanduser("~/supervisely.env"))
@@ -31,14 +33,18 @@ def download_activity_csv(api: sly.Api, task_id, context, state, app_logger):
 
     if PROJECT_ID is not None:
         result_act = api.project.get_activity(PROJECT_ID, progress_cb=print_progress)
+        w.workflow_input(api, PROJECT_ID, type="project")
         if len(result_act) == 0:
             app_logger.warn("No activities for current Project has been found")
         file_remote = os.path.join(
             sly.team_files.RECOMMENDED_EXPORT_PATH,
             f"activity_data/{TASK_ID}_{PROJECT_ID}_{RESULT_FILE_NAME}",
         )
+
     elif JOB_ID is not None:
         result_act = api.labeling_job.get_activity(TEAM_ID, JOB_ID, progress_cb=print_progress)
+        dataset_id = api.labeling_job.get_info_by_id(JOB_ID).dataset_id
+        w.workflow_input(api, dataset_id, type="dataset")
         if len(result_act) == 0:
             app_logger.warn("No activities for current Labeling Job has been found")
         file_remote = os.path.join(
@@ -98,7 +104,7 @@ def download_activity_csv(api: sly.Api, task_id, context, state, app_logger):
         file_name=sly.fs.get_file_name_with_ext(file_remote),
         file_url=file_info.storage_path,
     )
-
+    w.workflow_output(api, file_info)
     app_logger.info("Local file successfully uploaded to team files")
     my_app.stop()
 
