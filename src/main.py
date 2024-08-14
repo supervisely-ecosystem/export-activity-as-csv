@@ -33,7 +33,7 @@ def download_activity_csv(api: sly.Api, task_id, context, state, app_logger):
 
     if PROJECT_ID is not None:
         result_act = api.project.get_activity(PROJECT_ID, progress_cb=print_progress)
-        w.workflow_input(api, PROJECT_ID, type="project")
+        w.workflow_input(api, PROJECT_ID)
         if len(result_act) == 0:
             app_logger.warn("No activities for current Project has been found")
         file_remote = os.path.join(
@@ -43,8 +43,7 @@ def download_activity_csv(api: sly.Api, task_id, context, state, app_logger):
 
     elif JOB_ID is not None:
         result_act = api.labeling_job.get_activity(TEAM_ID, JOB_ID, progress_cb=print_progress)
-        dataset_id = api.labeling_job.get_info_by_id(JOB_ID).dataset_id
-        w.workflow_input(api, dataset_id, type="dataset")
+        # TODO add workflow input for labeling job
         if len(result_act) == 0:
             app_logger.warn("No activities for current Labeling Job has been found")
         file_remote = os.path.join(
