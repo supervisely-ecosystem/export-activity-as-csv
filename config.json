@@ -1,6 +1,7 @@
 {
   "name": "Export activity as csv",
   "type": "app",
+  "version": "2.0.0",
   "categories": ["images", "collaboration", "export"],
   "description": "Download activity as csv file",
   "docker_image": "supervisely/collaboration:6.73.157",

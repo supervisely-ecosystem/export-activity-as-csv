@@ -7,3 +7,4 @@ venv
 *.jpeg
 supervisely_lib
 .venv
+src/tmp/
