@@ -11,7 +11,7 @@
   <a href="#How-To-Use">How To Use</a>
 </p>
 
-[![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](../../../../supervisely-ecosystem/export-activity-as-csv)
+[![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](https://ecosystem.supervisely.com/apps/export-activity-as-csv)
 [![](https://img.shields.io/badge/slack-chat-green.svg?logo=slack)](https://supervisely.com/slack)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/supervisely-ecosystem/export-activity-as-csv)
 [![views](https://app.supervisely.com/img/badges/views/supervisely-ecosystem/export-activity-as-csv.png)](https://supervisely.com)
@@ -25,7 +25,7 @@ Download activity data from project, team, labeling job or team member as `.csv`
 
 ## How To Run 
 
-**Step 1**: Add app to your team from [Ecosystem](../../../../supervisely-ecosystem/export-activity-as-csv) if it is not there.
+**Step 1**: Add app to your team from [Ecosystem](https://ecosystem.supervisely.com/apps/export-activity-as-csv) if it is not there.
 
 **Step 2**: Open context menu of team, project, labeling job, or team member -> `Report` -> `Export activity as csv`. 
 
