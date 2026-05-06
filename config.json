@@ -5,7 +5,7 @@
   "categories": ["images", "collaboration", "export"],
   "description": "Download activity as csv file",
   "docker_image": "supervisely/collaboration:6.73.564",
-  "instance_version": "6.10.0",
+  "instance_version": "6.15.60",
   "main_script": "src/main.py",
   "task_location": "workspace_tasks",
   "icon": "https://i.imgur.com/pJEJ5zP.png",
